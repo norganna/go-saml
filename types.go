@@ -213,6 +213,17 @@ type Conditions struct {
 	XMLName      xml.Name
 	NotBefore    string `xml:",attr"`
 	NotOnOrAfter string `xml:",attr"`
+	AudienceRestriction AudienceRestriction
+}
+
+type AudienceRestriction struct {
+	XMLName xml.Name
+	AudienceValues []AudienceValue `xml:"Audience"`
+}
+
+type AudienceValue struct {
+	XMLName xml.Name
+	Value   string `xml:",innerxml"`
 }
 
 type Subject struct {
