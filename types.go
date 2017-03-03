@@ -24,7 +24,7 @@ type AuthnRequest struct {
 
 type Issuer struct {
 	XMLName xml.Name
-	SAML    string `xml:"xmlns:saml,attr"`
+	SAML    string `xml:"-"`
 	Url     string `xml:",innerxml"`
 }
 
@@ -49,6 +49,7 @@ type AuthnContextClassRef struct {
 
 type Signature struct {
 	XMLName        xml.Name
+	DS             string `xml:"xmlns:ds,attr"`
 	Id             string `xml:"Id,attr"`
 	SignedInfo     SignedInfo
 	SignatureValue SignatureValue
@@ -150,7 +151,7 @@ type SPSSODescriptor struct {
 
 type EntityAttributes struct {
 	XMLName xml.Name
-	SAML    string `xml:"xmlns:saml,attr"`
+	SAML    string `xml:"-"`
 
 	EntityAttributes []Attribute `xml:"Attribute"` // should be array??
 }
@@ -180,7 +181,7 @@ type Response struct {
 	XMLName      xml.Name
 	SAMLP        string `xml:"xmlns:samlp,attr"`
 	SAML         string `xml:"xmlns:saml,attr"`
-	SAMLSIG      string `xml:"xmlns:samlsig,attr"`
+	SAMLSIG      string `xml:"-"`
 	Destination  string `xml:"Destination,attr"`
 	ID           string `xml:"ID,attr"`
 	Version      string `xml:"Version,attr"`
