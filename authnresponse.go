@@ -108,6 +108,7 @@ func NewSignedResponse() *Response {
 			XMLName: xml.Name{
 				Local: "saml:Issuer",
 			},
+			SAML: "urn:oasis:names:tc:SAML:2.0:assertion",
 			Url: "", // caller must populate ar.AppSettings.AssertionConsumerServiceURL,
 		},
 		Signature: Signature{
@@ -208,6 +209,7 @@ func NewSignedResponse() *Response {
 				XMLName: xml.Name{
 					Local: "saml:Issuer",
 				},
+				SAML: "urn:oasis:names:tc:SAML:2.0:assertion",
 				Url: "", // caller must populate ar.AppSettings.AssertionConsumerServiceURL,
 			},
 			Subject: Subject{

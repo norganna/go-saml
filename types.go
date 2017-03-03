@@ -201,7 +201,7 @@ type Assertion struct {
 	Version            string `xml:"Version,attr"`
 	XS                 string `xml:"xmlns:xs,attr"`
 	XSI                string `xml:"xmlns:xsi,attr"`
-	SAML               string `xml:"saml,attr"`
+	SAML               string `xml:"-"`
 	IssueInstant       string `xml:"IssueInstant,attr"`
 	Issuer             Issuer `xml:"Issuer"`
 	Subject            Subject
